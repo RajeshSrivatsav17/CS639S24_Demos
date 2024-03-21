@@ -1,6 +1,6 @@
 #include "MatVecMultiply.h"
 
-// #define DO_NOT_USE_MKL
+#define DO_NOT_USE_MKL
 #ifndef DO_NOT_USE_MKL
 #include <mkl.h>
 #endif
@@ -8,7 +8,7 @@
 void MatVecMultiply(CSRMatrix& mat, const float *x, float *y)
 {
     int N = mat.mSize;
-    const auto rowOffsets = mat.GetRowOffsets();
+    const auto rowOffsets = mat.GetRowOffsets(); 
     const auto columnIndices = mat.GetColumnIndices();
     const auto values = mat.GetValues();
 

@@ -46,6 +46,7 @@ struct Timer
     void Print(const std::string& msg)
     {
         std::cout << "[" << msg << mElapsedTime.count() << "ms]" << std::endl;
+        std::cout << " Per transaction [" << msg << mElapsedTime.count()/256 << "ms]" << std::endl;
     }
     
 };
